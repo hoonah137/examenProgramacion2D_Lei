@@ -8,6 +8,9 @@ public class MC : MonoBehaviour
     // Variables
 
     [SerializeField] float _vel = 5;
+
+    float _playerHorizontal;
+    float _playerVertical;
     
 
     // Components
@@ -34,6 +37,10 @@ public class MC : MonoBehaviour
 
     void Move()
     {
+        _playerHorizontal = Input.GetAxis("Horizontal");
+        _playerVertical = Input.GetAxis("Vertical");
+
+        _rBody2D.velocity = new Vector2(_vel * _playerHorizontal, -4.9f);
 
     }
 
